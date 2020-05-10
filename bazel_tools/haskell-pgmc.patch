@@ -2,7 +2,7 @@ diff --git a/haskell/private/cabal_wrapper.py.tpl b/haskell/private/cabal_wrappe
 index 81269cc7..35c24cf4 100755
 --- a/haskell/private/cabal_wrapper.py.tpl
 +++ b/haskell/private/cabal_wrapper.py.tpl
-@@ -143,6 +143,17 @@ with tmpdir() as distdir:
+@@ -143,6 +143,15 @@ with tmpdir() as distdir:
          "--with-hc-pkg=" + ghc_pkg,
          "--with-ar=" + ar,
          "--with-gcc=" + cc,
@@ -15,8 +15,6 @@ index 81269cc7..35c24cf4 100755
 +        # restore them here. See
 +        # https://ghc.haskell.org/trac/ghc/ticket/7929.
 +        "--ghc-option=-optc-fno-stack-protector",
-+        "--ghc-option=-optP-E",
-+        "--ghc-option=-optP-undef",
          "--with-strip=" + strip,
          "--enable-deterministic", \
          ] +
